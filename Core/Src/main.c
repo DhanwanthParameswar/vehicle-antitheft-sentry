@@ -181,6 +181,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+      //Touch input
+	  GPIO_PinState Touch_input = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+
+	  //Writing to output, set output to open drain ! needed because rail is active low
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, !Touch_input);
+
+
+
+
+
 
     /* USER CODE END WHILE */
 
